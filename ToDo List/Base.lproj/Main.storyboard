@@ -142,6 +142,9 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="r7I-d6-GJs"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="datePicker" destination="q49-f6-ivR" id="5Xf-Hz-zAl"/>
+                        <outlet property="nameField" destination="ZjU-0P-eAs" id="0qG-p2-b0T"/>
+                        <outlet property="noteView" destination="9Qo-Bo-kAg" id="caZ-Jd-HT7"/>
                         <outlet property="saveBarButton" destination="r7I-d6-GJs" id="bXX-uP-aPk"/>
                     </connections>
                 </tableViewController>
