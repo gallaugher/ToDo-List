@@ -76,7 +76,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZjU-0P-eAs">
-                                                    <rect key="frame" x="14" y="5" width="289" height="34"/>
+                                                    <rect key="frame" x="13" y="5" width="290" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -139,7 +139,11 @@
                                 <action selector="cancelButtonPressed:" destination="mqh-XE-zmi" id="jd8-1q-qtY"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="r7I-d6-GJs"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="r7I-d6-GJs">
+                            <connections>
+                                <segue destination="WY1-XU-io2" kind="unwind" unwindAction="unwindFromDetailWithSegue:" id="6Rw-IO-dMM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="datePicker" destination="q49-f6-ivR" id="5Xf-Hz-zAl"/>
@@ -149,6 +153,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dTh-0p-rhC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="WY1-XU-io2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3215.625" y="121.47887323943662"/>
         </scene>
