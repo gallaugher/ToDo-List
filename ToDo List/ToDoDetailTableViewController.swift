@@ -117,7 +117,6 @@ class ToDoDetailTableViewController: UITableViewController {
     @IBAction func textFieldEditingChanged(_ sender: UITextField) {
         enableDisableSaveButton(text: sender.text!)
     }
-    
 }
 
 extension ToDoDetailTableViewController {
