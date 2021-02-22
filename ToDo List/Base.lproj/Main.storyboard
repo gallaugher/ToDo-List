@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s0B-fs-Wmw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s0B-fs-Wmw">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +19,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OIV-8R-fJi">
                                 <rect key="frame" x="0.0" y="44" width="320" height="524"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="MpQ-le-Q2T" customClass="ListTableViewCell" customModule="ToDo_List" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
@@ -55,14 +57,14 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OIV-8R-fJi" secondAttribute="bottom" id="2HP-NL-feb"/>
                             <constraint firstItem="OIV-8R-fJi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Jk7-xG-Wpz"/>
                             <constraint firstItem="OIV-8R-fJi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pw9-zt-ZYx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OIV-8R-fJi" secondAttribute="trailing" id="wRD-OI-Te7"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="To Do List" largeTitleDisplayMode="always" id="h7H-uq-snU">
                         <barButtonItem key="leftBarButtonItem" title="Edit" id="iau-Hx-Uh1">
@@ -92,7 +94,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Tgt-ek-FXu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="To Do Item" id="IZh-qN-MLH">
                                 <cells>
@@ -104,7 +106,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="This will be a To Do item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZjU-0P-eAs">
-                                                    <rect key="frame" x="7" y="5" width="304" height="34"/>
+                                                    <rect key="frame" x="5" y="5" width="305" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -133,14 +135,29 @@
                                                         <action selector="reminderSwitchChanged:" destination="mqh-XE-zmi" eventType="valueChanged" id="cfg-u4-8Ct"/>
                                                     </connections>
                                                 </switch>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="lUy-sV-Y26">
+                                                    <rect key="frame" x="122" y="0.0" width="182" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="182" id="mQR-LW-00n"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="datePickerChanged:" destination="mqh-XE-zmi" eventType="valueChanged" id="aG7-aR-w6W"/>
+                                                    </connections>
+                                                </datePicker>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12/12/12, 12:12:12 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i56-7q-Tou">
-                                                    <rect key="frame" x="111" y="11" width="193" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                                    <rect key="frame" x="110" y="0.0" width="194" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="lUy-sV-Y26" secondAttribute="bottom" id="08t-2K-1Yr"/>
+                                                <constraint firstAttribute="trailing" secondItem="lUy-sV-Y26" secondAttribute="trailing" constant="16" id="Gra-WK-8O1"/>
+                                                <constraint firstItem="lUy-sV-Y26" firstAttribute="top" secondItem="2ZM-hP-UBQ" secondAttribute="top" id="aRJ-zA-95A"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="200" id="JA6-cT-qSZ">
@@ -174,9 +191,9 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9Qo-Bo-kAg">
                                                     <rect key="frame" x="16" y="0.0" width="288" height="200"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
@@ -204,6 +221,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="compactDatePicker" destination="lUy-sV-Y26" id="FjV-31-USE"/>
                         <outlet property="dateLabel" destination="i56-7q-Tou" id="qkJ-RZ-YKw"/>
                         <outlet property="datePicker" destination="jJF-rf-HEq" id="07J-2G-dUe"/>
                         <outlet property="nameField" destination="ZjU-0P-eAs" id="0qG-p2-b0T"/>
@@ -233,7 +251,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VeC-so-Max" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.75" y="126.7605633802817"/>
+            <point key="canvasLocation" x="375" y="127"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="L7T-Dp-Tji">
@@ -255,11 +273,20 @@
             <point key="canvasLocation" x="2192" y="-220"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="checkmark.rectangle" catalog="system" width="64" height="46"/>
-        <image name="rectangle" catalog="system" width="64" height="46"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="UEE-HJ-yhp"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="checkmark.rectangle" catalog="system" width="128" height="93"/>
+        <image name="rectangle" catalog="system" width="128" height="93"/>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
