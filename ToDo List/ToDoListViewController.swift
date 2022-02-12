@@ -35,11 +35,12 @@ class ToDoListViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowDetail" {
+        if segue.identifier == "ShowDetail" { // tableView cell was clicked
             let destination = segue.destination as! ToDoDetailTableViewController
             let selectedIndexPath = tableView.indexPathForSelectedRow!
             destination.toDoItem = toDoItems.itemsArray[selectedIndexPath.row]
         } else {
+            // if here, then the "+" was clicked and the "AddItem" segue was triggered. If there is a cell still selected, deselect it. If you didn't do this, then the unwind code you'll write will incorrectly assume a new record is updating a currently selected row at indexPathForSelectedRow.
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
                 tableView.deselectRow(at: selectedIndexPath, animated: true)
             }

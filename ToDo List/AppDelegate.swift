@@ -42,6 +42,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         // I added this - let's see if it works
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
  
-        completionHandler([.sound, .alert])
+        completionHandler([.sound, .banner])
     }
 }
